@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>「💬」Contato ErikrafT</title>
+    <style>
+        .chat-button-container {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            width: 60px;
+            height: 60px;
+            z-index: 1000;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .chat-button-circle {
+            position: absolute;
+            width: 90px;
+            height: 90px;
+            border-radius: 50%;
+            border: 2px solid rgba(0, 0, 0, 0.7);
+            animation: pulse 2s infinite;
+        }   
+
+        .arrow {
+            position: absolute;
+            width: 0;
+            height: 0;
+            border-left: 10px solid transparent;
+            border-right: 10px solid transparent;
+        }
+
+        .arrow-down {
+            border-top: 10px solid #000;
+            top: -50px;
+            bottom: -30px;
+            left: 40%;
+            transform: translateX(-50%);
+            animation: bounce 2s infinite;
+        }
+
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% {
+                transform: translateX(-50%) translateY(0);
+            }
+            40% {
+                transform: translateX(-50%) translateY(-10px);
+            }
+            60% {
+                transform: translateX(-50%) translateY(-5px);
+            }
+        }
+
+        @keyframes pulse {
+            0% {
+                transform: scale(0.8);
+                opacity: 0.7;
+            }
+            50% {
+                transform: scale(1.5);
+                opacity: 0;
+            }
+            100% {
+                transform: scale(0.8);
+                opacity: 0.7;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="chat-button-container">
+        <div class="chat-button-circle"></div>
+        <div class="arrow arrow-up"></div>
+        <div class="arrow arrow-down"></div>
+        <script src="https://cdn.pulse.is/livechat/loader.js" data-live-chat-id="66721c8ff9997a03cb026517" async></script>
+    </div>
+</body>
+</html>
