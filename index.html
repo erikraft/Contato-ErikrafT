@@ -19,12 +19,24 @@
 
         .chat-button-circle {
             position: absolute;
+            border-radius: 50%;
+            border: 2px solid rgb(156, 0, 156);
+            animation: pulse 2s infinite;
+        }
+
+        .chat-button-circle:first-child {
             width: 90px;
             height: 90px;
-            border-radius: 50%;
-            border: 2px solid rgba(0, 0, 0, 0.7);
-            animation: pulse 2s infinite;
-        }   
+            border-color: rgb(156, 0, 156);
+            animation-delay: 0s;
+        }
+
+        .chat-button-circle:last-child {
+            width: 110px;
+            height: 110px;
+            border-color: rgb(0, 156, 156);
+            animation-delay: 1s;
+        }
 
         .arrow {
             position: absolute;
@@ -36,11 +48,14 @@
 
         .arrow-down {
             border-top: 10px solid #000;
-            top: -80px;
-            bottom: -30px;
-            left: 40%;
+            top: -80px; /* Ajuste para colocar as setas em cima */
+            left: 50%;
             transform: translateX(-50%);
             animation: bounce 2s infinite;
+        }
+
+        .arrow-down + .arrow-down {
+            top: -100px; /* Ajuste para colocar a segunda seta um pouco acima da primeira */
         }
 
         @keyframes bounce {
@@ -74,7 +89,8 @@
 <body>
     <div class="chat-button-container">
         <div class="chat-button-circle"></div>
-        <div class="arrow arrow-up"></div>
+        <div class="chat-button-circle"></div>
+        <div class="arrow arrow-down"></div>
         <div class="arrow arrow-down"></div>
         <script src="https://cdn.pulse.is/livechat/loader.js" data-live-chat-id="66721c8ff9997a03cb026517" async></script>
     </div>
